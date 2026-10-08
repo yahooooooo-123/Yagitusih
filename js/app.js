@@ -154,26 +154,20 @@
     document.body.appendChild(grain);
   }
 
-  /* ---------- image fallbacks: silent placeholder look ---------- */
+  /* ---------- hero portrait reveal: add .in on load so it fades in ---------- */
 
-  function markBroken(img) {
-    if (!img) return;
-    img.classList.add('fallback');
-  }
-
-  $('.portrait-frame img, .gallery-item img').forEach(function (img) {
-    var handle = function (good) {
-      if (good) { img.classList.add('ok'); img.classList.remove('fallback'); }
-      else { img.classList.remove('ok'); markBroken(img); }
-    };
-    if (img.complete && img.naturalWidth > 0) {
-      handle(true);
-    } else {
-      on(img, 'load', function () { handle(true); }, { once: true });
-      on(img, 'error', function () { handle(false); }, { once: true });
-      handle(false);
+  var heroImg = $('.portrait-frame img');
+  if (heroImg) {
+    function heroLoaded() {
+      heroImg.classList.add('in');
+      heroImg.style.opacity = '1';
     }
-  });
+    if (heroImg.complete && heroImg.naturalWidth > 0) {
+      heroLoaded();
+    } else {
+      on(heroImg, 'load', heroLoaded, { once: true });
+    }
+  }
 
   /* ---------- lightbox ---------- */
 

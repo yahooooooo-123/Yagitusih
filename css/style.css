@@ -390,8 +390,12 @@ body::after {
   width: 100%;
   height: auto;
   display: block;
+  opacity: 0;
   filter: saturate(0.92) contrast(1.04);
-  transition: transform 1.2s var(--ease), filter 1.2s var(--ease);
+  transition: opacity 1.2s var(--ease), filter 1.2s var(--ease);
+}
+.portrait-frame img.in {
+  opacity: 1;
 }
 .portrait-frame:hover img {
   filter: saturate(1) contrast(1.05);
@@ -580,11 +584,8 @@ body::after {
   width: 100%;
   height: auto;
   display: block;
-  opacity: 0;
-  transition: opacity 0.8s ease, filter 0.6s var(--ease);
   filter: saturate(0.9);
 }
-.gallery-item img.ok { opacity: 1; }
 .gallery-item::after {
   content: "";
   position: absolute;
@@ -915,4 +916,7 @@ img.fallback {
 }
 .portrait-frame img.fallback {
   min-height: 500px;
+}
+.gallery-item img.fallback {
+  display: none;
 }
