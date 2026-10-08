@@ -318,11 +318,19 @@
     on(audio, 'pause', setPlayingUI);
     on(audio, 'ended', setPlayingUI);
     on(audio, 'timeupdate', setProgressUI);
+    on(audio, 'durationchange', setDurUI);
     on(audio, 'loadedmetadata', setDurUI);
+    on(audio, 'loadeddata', setDurUI);
     on(audio, 'volumechange', setMuteUI);
     on(audio, 'error', function () {
       // silent: player just stays as a play button; no technical text shown
     });
+    if (!audio.hasAttribute('data-init')) {
+      audio.setAttribute('data-init', '1');
+      if (volRange) {
+        audio.volume = clamp01(parseInt(volRange.value, 10) / 100) || 0.7;
+      }
+    }
 
     if (volBtn) {
       volBtn.innerHTML = VOL_ON;
@@ -381,13 +389,6 @@
     setProgressUI();
     setDurUI();
 
-    // try quiet autoplay; do nothing if blocked (no scary text)
-    if (audio) {
-      var tryPlay = audio.play();
-      if (tryPlay && tryPlay.catch) {
-        tryPlay.catch(function () { /* blocked: play button stays */ });
-      }
-    }
   }
 
   /* ---------- hero glow parallax (very subtle) ---------- */

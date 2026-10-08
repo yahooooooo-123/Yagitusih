@@ -7,7 +7,7 @@
   <meta name="description" content="Aisha De Elmir — the First Princess of Elmir from Into the Light, Once Again.">
   <title>Aisha De Elmir</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23bcd9ff'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
       <p class="hero-series reveal">from <em>Into the Light, Once Again</em></p>
       <div class="hero-portrait reveal">
         <div class="portrait-frame">
-          <img src="./assets/images/aisha-1.jpg" alt="Aisha De Elmir" width="720" height="960" loading="eager" decoding="async">
+          <img src="assets/images/aisha-1.jpg" alt="Aisha De Elmir" width="720" height="960" loading="eager" decoding="async">
           <div class="portrait-glow" aria-hidden="true"></div>
         </div>
       </div>
@@ -109,11 +109,11 @@
     <div class="section-inner">
       <h2 class="section-title reveal">Gallery</h2>
       <div class="gallery-grid" id="galleryGrid">
-        <figure class="gallery-item" data-full="./assets/images/aisha-1.jpg"><img src="./assets/images/aisha-1.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-item" data-full="./assets/images/aisha-2.jpg"><img src="./assets/images/aisha-2.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-item" data-full="./assets/images/aisha-3.jpg"><img src="./assets/images/aisha-3.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-item" data-full="./assets/images/aisha-4.jpg"><img src="./assets/images/aisha-4.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-item" data-full="./assets/images/aisha-5.jpg"><img src="./assets/images/aisha-5.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-item" data-full="assets/images/aisha-1.jpg"><img src="assets/images/aisha-1.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-item" data-full="assets/images/aisha-2.jpg"><img src="assets/images/aisha-2.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-item" data-full="assets/images/aisha-3.jpg"><img src="assets/images/aisha-3.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-item" data-full="assets/images/aisha-4.jpg"><img src="assets/images/aisha-4.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-item" data-full="assets/images/aisha-5.jpg"><img src="assets/images/aisha-5.jpg" alt="Aisha, portrait" width="720" height="960" loading="lazy" decoding="async"></figure>
       </div>
     </div>
   </section>
@@ -143,7 +143,9 @@
           <input type="range" class="vol-range" id="volRange" min="0" max="100" value="70" aria-label="Volume">
         </div>
       </div>
-      <audio id="themeAudio" preload="auto" src="./assets/audio/aisha-theme.mp3"></audio>
+      <audio id="themeAudio" preload="metadata">
+        <source src="assets/audio/aisha-theme.mp3" type="audio/mpeg">
+      </audio>
       <p class="music-quote reveal">“even in darkness, light remembers her name.”</p>
     </div>
   </section>
@@ -167,6 +169,6 @@
   <div class="lb-caption" id="lbCaption" aria-hidden="true"></div>
 </div>
 
-<script src="./js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
